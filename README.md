@@ -58,7 +58,7 @@ Things you may want to cover:
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id||null: false, 
+|user_id|string|null: false, 
 ### Association
 - has_many :comments
   has_many :users_groups
