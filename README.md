@@ -43,6 +43,7 @@ Things you may want to cover:
 |group|string|null: false,foreign_key: true|
 ### Association
 - has_many :comments
+  has_many :users_groups
 - has_many :groups, through:  :users_groups
 
 ## users_groupsテーブル
@@ -57,7 +58,8 @@ Things you may want to cover:
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|string|null: false, 
+|user_id||null: false, 
 ### Association
 - has_many :comments
+  has_many :users_groups
 - has_many :users through:  :users_groups
