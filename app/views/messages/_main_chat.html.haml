@@ -1,0 +1,38 @@
+.chat-main
+  .chat-main-header
+    .chat-main-header__left-box
+      .chat-main-header__left-box__current__group
+        test
+      %ul.chat-main-header__left-box__member
+        Member:
+        %li.chat-main-header__left-box__member__name
+        m          
+    = link_to "Edit", root_path , class: "chat-main-header__right-box"
+  .chat-main-message-list
+    .chat-main-id1
+      .upper-info
+        %p.info-talker
+          tago
+        %p.info-date
+          2020/01/16(Thu) 17:00
+      .message_text
+        おはよう
+      .upper-info
+        %p.info-talker
+          imai
+        %p.info-date
+          2020/01/16(Thu) 17:30
+      .cmessage_text
+        こんにちは
+      .chat-main-message-list_text
+  .chat-main-form
+    .form_imput-box
+      .message_form
+        %input{type:"text",class:"input-box__text",placeholder:"type a message"}
+        %form.input-box__image
+          %label{class:"input-box__image"}
+            = icon('far', 'image')
+            %input{type:"file",class:"input-image"}
+        =link_to"Send",root_path ,class:"submit__btn"
+            
+   

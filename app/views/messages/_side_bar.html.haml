@@ -1,0 +1,15 @@
+.chat-side 
+  .chat-side__header
+    .chat-side__header__box
+      %p.chat-side__header__box__user
+        name
+      .chat-side__header__box__menu
+        = link_to "#" do
+          = icon('fas', 'edit')
+        = link_to "#" do
+          = icon('fas', 'cog')
+  .groups
+    %p.groups-name
+      techcamp
+    %p.groups-name__message
+      まだグループはありません
