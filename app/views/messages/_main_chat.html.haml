@@ -1,33 +1,35 @@
 .chat-main
-  .chat-main-header
-    .chat-main-header__left-box
-      .chat-main-header__left-box__current__group
+
+  .chat-main__header
+    .chat-main__header__left-box
+      .chat-main__header__left-box__group
         test
-      %ul.chat-main-header__left-box__member
+      %ul.chat-main__header__left-box__member
         Member:
-        %li.chat-main-header__left-box__member__name
-        m          
-    = link_to "Edit", root_path , class: "chat-main-header__right-box"
-  .chat-main-message-list
-    .chat-main-id1
-      .upper-info
-        %p.info-talker
-          tago
-        %p.info-date
-          2020/01/16(Thu) 17:00
-      .message_text
+        %li.chat-main__header__left-box__member__name
+          m          
+    = link_to "Edit", root_path , class: "chat-main__header__right-box"
+  .chat-main__message
+    .chat-main__message__data-message
+      .chat-main__message__data-message__upper-info
+        %p.chat-main__message__data-message__upper-info__talker
+        tago
+        %p.chat-main__message__data-message__upper-info__date
+        2020/01/16(Thu) 17:00
+      .chat-main__message__data-message__upper-info_text
         おはよう
-      .upper-info
-        %p.info-talker
+      .chat-main__message__data-message__info2
+        %p.chat-main__message__data-message__info2__talker
           imai
-        %p.info-date
+        %p.chat-main__message__data-message__info2__date
           2020/01/16(Thu) 17:30
-      .cmessage_text
+      .chat-main__message__data-message__text2
         こんにちは
-      .chat-main-message-list_text
-  .chat-main-form
-    .form_imput-box
-      .message_form
+      .chat-main-message-data-message__list-text
+  .chat-main__form
+    .chat-main__form__imput-box
+      .chat-main__form__imput-box__message-form
+
         %input{type:"text",class:"input-box__text",placeholder:"type a message"}
         %form.input-box__image
           %label{class:"input-box__image"}
