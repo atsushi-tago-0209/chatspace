@@ -2,7 +2,9 @@
   width: calc(100vw - 300px); 
   height: 100vh;
   float: right;
+
   &__header{
+
     height: 100px;
     width: calc(100vw - 300px);
     background-color: #ffffff;
@@ -15,12 +17,15 @@
       width: 60px;
       justify-content: space-between;
       align-items: center;
+
       &__group{
+
         font-size: 20px;
         color: #333333;
         margin-bottom: 15px;
       }
       &__member{
+
         font-size: 12px;
         color: #999999;
         bottom: 0;
@@ -31,6 +36,7 @@
             color: #999999;
             bottom: 0;
           }
+
       }
     &__right-box{
       height: 40px;
@@ -45,12 +51,17 @@
       text-decoration: none;
     }
   }
+
   &__message{
+
+  
     height: calc(100vh - 190px);
     background-color:#fafafa;
     width: calc(100vw - 300px);
     padding: 46px 40px;
+
     &__data-message{
+
       height: 99px;
       width:459px;
       padding-bottom: 46px;
@@ -59,31 +70,39 @@
         width: 459px;
         margin-bottom: 12px;
         display: flex;
+
         &__talker{
           color: #333333;
           font-size: 16px;
         }
         &__date{
+
           margin-left: 10px;
           color: #999999;
           font-size: 12px;
         }
       }
+
       &__text{
+
         font-size: 14px;
       }
     }
   }
+
   &__form{
+
     background-color: #d2d2d2;
     height: 90px;
     width: calc(100vw - 300px);
     padding: 20px 40px;
+
     &__imput-box{
       height: 50px;
       width: 900px;
       display: flex;
       &__message-form{
+
         height: 50px;
         display: flex;
         position: relative;
