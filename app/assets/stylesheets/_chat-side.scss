@@ -30,7 +30,7 @@
     }
    }
   }  
-  .groups{
+  &__groups{
     background-color: #2f3e51;
     width: 300px;
     height: calc(100vh - 100px);
@@ -38,14 +38,22 @@
       // &__box{
       // height: 65px;
       // color:white;
-        &-name{
-          color: white;
-        &__message{
-          margin-top: 5px;
-          font-size: 11px;
-          color: white;
-        }
-      // }
-    }
+    &__list{
+      color: white;
+      height: 60px;
+      &__name{
+      margin-top: 20px;
+      font-size: 15px;
+      color: white;
+      text-decoration: none;
+      }
+      &__message{
+        margin-top: 5px;
+        margin-bottom: 40px;
+        font-size: 11px;
+        color: white;
+        text-decoration: none;
+      }
+    } // }
   }
 }

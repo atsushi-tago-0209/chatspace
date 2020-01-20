@@ -45,33 +45,32 @@
       text-decoration: none;
     }
   }
-  &__message{  
+  .messages{  
     height: calc(100vh - 190px);
     background-color:#fafafa;
     width: calc(100vw - 300px);
     padding: 46px 40px;
-    &__data-message{
-      height: 99px;
-      width:459px;
-      padding-bottom: 46px;
+    overflow: scroll;
+    &__message{
+      padding-bottom: 40px;
+      height: 95px;
       &__upper-info{
         height: 18px;
-        width: 459px;
-        margin-bottom: 12px;
         display: flex;
-        &__talker{
+        margin-bottom: 10px;
+        p1{
           color: #333333;
           font-size: 16px;
         }
-        &__date{
+        p2{
           margin-left: 10px;
           color: #999999;
           font-size: 12px;
         }
       }
-      &__text{
+      &__lower-message{
         font-size: 14px;
-      }
+      }  
     }
   }
   &__form{
@@ -79,15 +78,15 @@
     height: 90px;
     width: calc(100vw - 300px);
     padding: 20px 40px;
-    &__imput-box{
+    &__input-box{
       height: 50px;
       width: 900px;
       display: flex;
-      &__message-form{
+      &__message{
         height: 50px;
         display: flex;
         position: relative;
-        .input-box__text{
+        &__text{
           line-height: 50px;
           color: #434a54;
           font-size: 16px;
@@ -97,7 +96,7 @@
           width: 790px;
           height: 50px;
         }
-        .input-box__image{
+        &__image{
           margin-right: 10px;
           height:22px;
           width: 24px;
@@ -110,22 +109,23 @@
             text-align: center;
           }
         }
+        &__submit-btn{
+          height: 50px;
+          width: 94px;
+          padding: 0 30px;
+          border: solid 1px;
+          margin-left: 15px;
+          align-items: center;
+          line-height: 50px;
+          color: white;
+          background-color: #38aef0;
+          cursor: pointer;
+          border-style: none;
+          float: right;
+          text-decoration: none;
+        }
       }
-      .submit__btn{
-        height: 50px;
-        width: 94px;
-        padding: 0 30px;
-        border: solid 1px;
-        margin-left: 15px;
-        align-items: center;
-        line-height: 50px;
-        color: white;
-        background-color: #38aef0;
-        cursor: pointer;
-        border-style: none;
-        float: right;
-        text-decoration: none;
-      }
+      
     }
   }
 }
@@ -133,3 +133,4 @@
 .input-image {
   display: none;
 }
+

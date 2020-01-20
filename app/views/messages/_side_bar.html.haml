@@ -2,26 +2,17 @@
   .chat-side__header
     .chat-side__header__box
       %p.chat-side__header__box__user
-        = current__user.name
+        = current_user.name
       .chat-side__header__box__menu
-        = link_to  do
+        = link_to new_group_path do
           = icon('fas', 'edit',class: 'icon')
         = link_to edit_user_path(current_user) do
           = icon('fas', 'cog', class: 'icon')
-  .groups
-    %p.groups-name
-      グループ名
-    %p.groups-name__message
-      新着メッセージ
-    %p.groups-name
-      グループ名
-    %p.groups-name__message
-      新着メッセージ
-    %p.groups-name
-      グループ名
-    %p.groups-name__message
-      新着メッセージ
-    %p.groups-name
-      グループ名
-    %p.groups-name__message
-      新着メッセージ
+  .chat-side__groups
+    - current_user.groups.each do |group|
+      .chat-side__groups__list
+        = link_to group_messages_path(group),class:"list" do
+          .chat-side__groups__list__name
+            = group.name
+          .chat-side__groups__list__message
+            = group.show_last_message
