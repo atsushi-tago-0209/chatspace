@@ -53,7 +53,6 @@
     overflow: scroll;
     &__message{
       padding-bottom: 40px;
-      height: 95px;
       &__upper-info{
         height: 18px;
         display: flex;
@@ -70,6 +69,8 @@
       }
       &__lower-message{
         font-size: 14px;
+        height:80px;
+        width: 80px;
       }  
     }
   }
