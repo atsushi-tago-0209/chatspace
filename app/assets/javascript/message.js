@@ -20,6 +20,7 @@ $(function(){
         }
       })
       .fail(function() {
+        alert("自動更新が正しくできませんでした");
       });
   };
   var buildHTML =function (message){
