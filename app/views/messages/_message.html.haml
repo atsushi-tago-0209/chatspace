@@ -1,12 +1,12 @@
 
-.messages__message
+.messages__message{data: {message: {id: message.id}}}
   .messages__message__upper-info
-    %p1.messages-message__upper-info__user-name
+    .messages__message__upper-info__user-name
       = message.user.name
-    %p2.messages-message__upper-info__date
+    .messages__message__upper-info__date
       = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
   .messages__message__lower-message
     - if message.content.present?
-      %p.messages__message__lower-message__content
+      .messages__message__lower-message__content
         = message.content
   = image_tag message.image.url, class: 'lower-message__image' if message.image.present?

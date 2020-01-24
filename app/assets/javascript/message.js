@@ -1,45 +1,84 @@
-$(function(){ 
-  function buildHTML(message){
-   if ( message.image ) {
-     var html =
-      `<div class="messages_message" data-message-id=${message.id}>
-         <div class="messages__message__upper-info">
-           <p1 class="messages-message__upper-info__user-name">
-             ${message.user_name}
-           </p1>
-           <p2 class="messages-message__upper-info__date">
-             ${message.created_at}
-           </p2>
-         </div>
-         <div class="messages__message__lower-message">
-           <p class="messages__message__lower-message__content">
-             ${message.content}
-           </p>
-         </div>
-         <img src=${message.image} >
-       </div>`
-     return html;
-   } else {
+$(function(){
+  var reloadMessages = function() {
+    last_message_id = $('.messages__message:last').data("message-id");
+      $.ajax({
+        url: "api/messages",
+        type: 'get',
+        dataType: 'json',
+        data: {id: last_message_id}
+      })
+      .done(function(messages) {
+        if (messages.length !== 0) {
+        var insertHTML = '';
+        $.each(messages, function(i, message) {
+          insertHTML += buildHTML(message)
+        });
+        $('.messages').append(insertHTML);
+        $('.messages__message__upper-info').animate({ scrollTop: $('.messages')[0].scrollHeight});
+        $("#new_message")[0].reset();
+        $(".form__submit").prop("disabled", false);
+        }
+      })
+      .fail(function() {
+      });
+  };
+  var buildHTML =function (message){
+   if ( message.content && message.image ) {
      var html =
       `<div class="messages__message" data-message-id=${message.id}>
          <div class="messages__message__upper-info">
-           <p1 class="messages-message__upper-info__user-name">
+           <div class="messages__message__upper-info__user-name">
              ${message.user_name}
-           </p1>
-           <p2 class="messages-message__upper-info__date">
+           </div>
+           <div class="messages__message__upper-info__date">
              ${message.created_at}
-           </p2>
+           </div>
          </div>
          <div class="messages__message__lower-message">
-           <p class="messages__message__lower-message__content">
+           <div class="messages__message__lower-message__content">
              ${message.content}
-           </p>
+           </div>
+         </div>
+          <img src=${message.image} >
+       </div>`
+     return html;
+   } else if (message.content) {
+     var html =
+      `<div class="messages__message" data-message-id=${message.id}>
+         <div class="messages__message__upper-info">
+           <div class="messages__message__upper-info__user-name">
+             ${message.user_name}
+           </div>
+           <div class="messages__message__upper-info__date">
+             ${message.created_at}
+           </div>
+         </div>
+         <div class="messages__message__lower-message">
+           <div class="messages__message__lower-message__content">
+             ${message.content}
+           </div>
+         </div>
+        </div>`
+    } else if (message.image)
+    var html =
+      `<div class="messages__message" data-message-id=${message.id}>
+         <div class="messages__message__upper-info">
+           <div class="messages__message__upper-info__user-name">
+             ${message.user_name}
+           </div>
+           <div class="messages__message__upper-info__date">
+             ${message.created_at}
+           </div>
+         </div>
+         <div class="messages__message__lower-message">
+           <div class="messages__message__lower-message__content">
+            <img src=${message.image} >
+           </div>
          </div>
        </div>`
      return html;
    };
- }
-$('#new_message').on('submit', function(e){
+ $('#new_message').on('submit', function(e){
  e.preventDefault();
  var formData = new FormData(this);
  var url = $(this).attr('action')
@@ -60,10 +99,13 @@ $('#new_message').on('submit', function(e){
   })
   .fail(function() {
     alert("メッセージ送信に失敗しました");
+    $('.chat-main__form__input-box__message__submit-btn').prop('disabled', false);
   })
   $(function(){
     $('img').css('display','')
     });
-})
+ })
+  if (document.location.href.match(/\/groups\/\d+\/messages/)) {
+    setInterval(reloadMessages, 5000);
+  }
 });
-
