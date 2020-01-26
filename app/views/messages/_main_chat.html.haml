@@ -13,12 +13,20 @@
       = render @messages 
   .chat-main__form
     .chat-main__form__input-box
-      .chat-main__form__input-box__message
-        = form_for [@group, @message] do |f|
-          = f.text_field :content, class: 'chat-main__form__input-box__message__text', placeholder: 'type a message'
-          .chat-main__form__input-box__message__image
-            = f.label :image, class: 'chat-main__form__input-box__message__image' do
-              = icon('fas', 'image', class: 'icon')
-              = f.file_field :image, class: 'input-image'
-          = f.submit 'Send', class: 'chat-main__form__input-box__message__submit-btn'
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'text', placeholder: 'type a message'
+        .chat-main__form__input-box__image
+          = f.label :image, class: 'chat-main__form__input-box__message__image' do
+            = icon('fas', 'image', class: 'icon')
+            = f.file_field :image, class: 'input-image'
+        = f.submit 'Send', class: 'submit-btn'
+
+    -# .form
+    -#   %form
+    -#     %input.form__message
+    -#     .form__mask
+    -#       %label.form__mask__image
+    -#         = icon('fa','image',class: 'icon')
+    -#         %input.hidden{type: 'file'}
+    -#     %input.form__submit{type: 'submit', value: 'Send'}
    

@@ -94,7 +94,7 @@ $(function(){
     $('.messages').append(html);      
     $('form')[0].reset();
     $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
-    $('.chat-main__form__input-box__message__submit-btn').prop('disabled', false);
+    $('.submit-btn').prop('disabled', false);
   })
   .fail(function() {
     alert("メッセージ送信に失敗しました");
@@ -104,7 +104,7 @@ $(function(){
     $('img').css('display','')
     });
  })
-  if (document.location.href.match(/\/groups\/\d+\/messages/)) {
-    setInterval(reloadMessages, 5000);
-  }
+  // if (document.location.href.match(/\/groups\/\d+\/messages/)) {
+  //   setInterval(reloadMessages, 5000);
+  // }
 });
