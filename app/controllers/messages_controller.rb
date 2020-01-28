@@ -7,6 +7,7 @@ class MessagesController < ApplicationController
   
   def create
     @message = @group.messages.new(message_params)
+    binding.pry
     if @message.save
       respond_to do |format|
         format.json
@@ -23,14 +24,6 @@ class MessagesController < ApplicationController
     params.require(:message).permit(:content,:image).merge(user_id: current_user.id)
   end
 
-  def set_group
-    @group = Group.find(params[:group_id])
-  end
-  
-  def show
-    @message = Message.find(params[:id])
-  end
-  
   def set_group
     @group = Group.find(params[:group_id])
   end
