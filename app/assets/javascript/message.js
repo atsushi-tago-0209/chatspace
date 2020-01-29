@@ -104,7 +104,7 @@ $(function(){
     $('img').css('display','')
     });
  })
-  // if (document.location.href.match(/\/groups\/\d+\/messages/)) {
-  //   setInterval(reloadMessages, 5000);
-  // }
+  if (document.location.href.match(/\/groups\/\d+\/messages/)) {
+    setInterval(reloadMessages, 5000);
+  }
 });
