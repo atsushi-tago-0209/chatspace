@@ -14,7 +14,7 @@ $(function(){
           insertHTML += buildHTML(message)
         });
         $('.messages').append(insertHTML);
-        $('.messages__message__upper-info').animate({ scrollTop: $('.messages')[0].scrollHeight});
+        $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
         }
       })
       .fail(function() {
